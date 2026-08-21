@@ -11,6 +11,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 
 load_dotenv()
 
+
 # ---------------------------
 # Streamlit Config
 # ---------------------------
@@ -56,9 +57,6 @@ div[data-testid="stSidebar"] *{
 
 DB_FAISS_PATH = "vectorstore/db_faiss"
 
-# ---------------------------
-# Load Vector Store
-# ---------------------------
 @st.cache_resource
 def get_vectorstore():
     embedding = HuggingFaceEmbeddings(
@@ -72,7 +70,6 @@ def get_vectorstore():
     )
 
     return db
-
 
 # ---------------------------
 # Load LLM
